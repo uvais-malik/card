@@ -1,0 +1,43 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+dist-ssr/
+
+# Puppeteer Chrome temp data
+.chrome-*/
+
+# Preview images (large binaries)
+*.png
+page1-bg.*
+page2-bg.*
+bg-preview.png
+pdf-rendered-preview.png
+
+# Env files
+.env
+.env.local
+.env.*.local
+
+# Editor
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Vite
+vite.config.ts.timestamp-*

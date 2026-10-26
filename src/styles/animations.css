@@ -1,0 +1,276 @@
+/* ===== Curtain Styles ===== */
+.curtain-panel {
+  position: absolute;
+  top: 0;
+  width: 52%;
+  height: 100%;
+  z-index: 20;
+  background: linear-gradient(
+    180deg,
+    #4A1520 0%,
+    #651F2B 15%,
+    #7A2835 30%,
+    #651F2B 50%,
+    #5A1B26 70%,
+    #4A1520 85%,
+    #3A1018 100%
+  );
+}
+
+.curtain-left {
+  left: 0;
+  border-right: 3px solid rgba(185, 154, 89, 0.3);
+  background-image:
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 20px,
+      rgba(185, 154, 89, 0.03) 20px,
+      rgba(185, 154, 89, 0.03) 22px
+    ),
+    linear-gradient(
+      180deg,
+      #4A1520 0%,
+      #651F2B 15%,
+      #7A2835 30%,
+      #651F2B 50%,
+      #5A1B26 70%,
+      #4A1520 85%,
+      #3A1018 100%
+    );
+  box-shadow: inset -30px 0 60px rgba(0, 0, 0, 0.4), inset -5px 0 15px rgba(0, 0, 0, 0.2);
+}
+
+.curtain-right {
+  right: 0;
+  border-left: 3px solid rgba(185, 154, 89, 0.3);
+  background-image:
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 20px,
+      rgba(185, 154, 89, 0.03) 20px,
+      rgba(185, 154, 89, 0.03) 22px
+    ),
+    linear-gradient(
+      180deg,
+      #4A1520 0%,
+      #651F2B 15%,
+      #7A2835 30%,
+      #651F2B 50%,
+      #5A1B26 70%,
+      #4A1520 85%,
+      #3A1018 100%
+    );
+  box-shadow: inset 30px 0 60px rgba(0, 0, 0, 0.4), inset 5px 0 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Curtain drape folds */
+.curtain-left::before,
+.curtain-right::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: repeating-linear-gradient(
+    90deg,
+    transparent 0px,
+    rgba(0, 0, 0, 0.08) 8px,
+    transparent 16px,
+    rgba(255, 255, 255, 0.03) 24px,
+    transparent 32px
+  );
+  pointer-events: none;
+}
+
+/* Curtain tassel/valance at top */
+.curtain-left::after,
+.curtain-right::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  background: linear-gradient(
+    180deg,
+    rgba(185, 154, 89, 0.15) 0%,
+    transparent 100%
+  );
+  border-bottom: 1px solid rgba(185, 154, 89, 0.1);
+  pointer-events: none;
+}
+
+/* ===== Letter/Parchment ===== */
+.letter-card {
+  background:
+    radial-gradient(ellipse at 30% 20%, rgba(185, 154, 89, 0.08) 0%, transparent 50%),
+    radial-gradient(ellipse at 70% 80%, rgba(185, 154, 89, 0.06) 0%, transparent 50%),
+    linear-gradient(175deg, #FFFDF8 0%, #F8F1E5 40%, #F0E8D8 100%);
+  border: 1px solid rgba(185, 154, 89, 0.25);
+  box-shadow:
+    0 4px 30px rgba(44, 24, 16, 0.08),
+    0 1px 3px rgba(44, 24, 16, 0.05),
+    inset 0 1px 0 rgba(255, 255, 255, 0.5);
+  position: relative;
+}
+
+.letter-card::before {
+  content: '';
+  position: absolute;
+  top: -1px;
+  left: -1px;
+  right: -1px;
+  bottom: -1px;
+  border: 1px solid rgba(185, 154, 89, 0.15);
+  pointer-events: none;
+}
+
+/* ===== Ornamental decorations ===== */
+.ornament-corner {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  opacity: 0.4;
+}
+
+.ornament-corner svg {
+  width: 100%;
+  height: 100%;
+  fill: #B99A59;
+}
+
+.ornament-top-left {
+  top: 12px;
+  left: 12px;
+}
+
+.ornament-top-right {
+  top: 12px;
+  right: 12px;
+  transform: scaleX(-1);
+}
+
+.ornament-bottom-left {
+  bottom: 12px;
+  left: 12px;
+  transform: scaleY(-1);
+}
+
+.ornament-bottom-right {
+  bottom: 12px;
+  right: 12px;
+  transform: scale(-1);
+}
+
+/* ===== Scroll indicator ===== */
+@keyframes scrollBounce {
+  0%, 100% { transform: translateY(0) translateX(-50%); opacity: 0.7; }
+  50% { transform: translateY(8px) translateX(-50%); opacity: 1; }
+}
+
+.scroll-indicator {
+  animation: scrollBounce 2s ease-in-out infinite;
+}
+
+/* ===== Glow effect ===== */
+.glow-warm {
+  box-shadow:
+    0 0 40px rgba(185, 154, 89, 0.15),
+    0 0 80px rgba(185, 154, 89, 0.08);
+}
+
+/* ===== Decorative arch ===== */
+.arch-frame {
+  border: 2px solid rgba(185, 154, 89, 0.3);
+  border-radius: 50% 50% 0 0 / 30% 30% 0 0;
+  padding: 3rem 2rem 2rem;
+  position: relative;
+}
+
+.arch-frame::before {
+  content: '';
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  right: 4px;
+  bottom: 4px;
+  border: 1px solid rgba(185, 154, 89, 0.15);
+  border-radius: 50% 50% 0 0 / 30% 30% 0 0;
+  pointer-events: none;
+}
+
+/* ===== Floating Names & Revealed Royal Background ===== */
+@keyframes nameFloatGroom {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-9px) rotate(-0.5deg);
+  }
+}
+
+@keyframes nameFloatBride {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-9px) rotate(0.5deg);
+  }
+}
+
+@keyframes floatParticle {
+  0%, 100% {
+    transform: translateY(0) translateX(0);
+    opacity: 0.25;
+  }
+  50% {
+    transform: translateY(-18px) translateX(8px);
+    opacity: 0.85;
+  }
+}
+
+@keyframes wedsPulse {
+  0%, 100% {
+    opacity: 0.8;
+    transform: scale(1);
+    filter: drop-shadow(0 0 4px rgba(185, 154, 89, 0.4));
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.04);
+    filter: drop-shadow(0 0 12px rgba(185, 154, 89, 0.8));
+  }
+}
+
+.animate-name-groom {
+  animation: nameFloatGroom 4.5s ease-in-out infinite;
+}
+
+.animate-name-bride {
+  animation: nameFloatBride 4.5s ease-in-out infinite 0.75s;
+}
+
+.animate-weds {
+  animation: wedsPulse 3s ease-in-out infinite;
+}
+
+.animate-sparkle-1 {
+  animation: floatParticle 4s ease-in-out infinite;
+}
+
+.animate-sparkle-2 {
+  animation: floatParticle 5.5s ease-in-out infinite 1.2s;
+}
+
+.animate-sparkle-3 {
+  animation: floatParticle 6.5s ease-in-out infinite 2.5s;
+}
+
+/* Royal revealed backdrop matching the velvet curtains */
+.revealed-royal-bg {
+  background:
+    radial-gradient(ellipse at 50% 45%, rgba(185, 154, 89, 0.22) 0%, rgba(101, 31, 43, 0.85) 50%, #2A0C12 100%),
+    linear-gradient(180deg, #3A1018 0%, #4A1520 20%, #651F2B 50%, #4A1520 80%, #2A0C12 100%);
+}

@@ -1,0 +1,104 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+    background-color: #F8F1E5;
+    color: #2C1810;
+    font-family: 'Inter', system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+  }
+
+  ::selection {
+    background-color: rgba(185, 154, 89, 0.3);
+    color: #2C1810;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #F8F1E5;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #B99A59;
+    border-radius: 3px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #967A3F;
+  }
+}
+
+@layer components {
+  .section-container {
+    @apply min-h-screen flex flex-col items-center justify-center px-4 sm:px-6 lg:px-8 py-16 sm:py-20 relative overflow-hidden;
+  }
+
+  .gold-divider {
+    @apply w-24 h-px bg-gold mx-auto my-6;
+  }
+
+  .gold-divider-wide {
+    @apply w-40 h-px bg-gold mx-auto my-8;
+  }
+
+  .heading-primary {
+    @apply font-heading text-3xl sm:text-4xl md:text-5xl text-burgundy font-semibold tracking-wide;
+  }
+
+  .heading-secondary {
+    @apply font-heading text-xl sm:text-2xl md:text-3xl text-burgundy font-medium;
+  }
+
+  .text-body {
+    @apply font-body text-base sm:text-lg text-dark leading-relaxed;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center gap-2 px-6 py-3 bg-burgundy text-ivory font-body text-sm font-medium tracking-wider uppercase rounded-sm
+           hover:bg-burgundy-dark transition-all duration-300 hover:shadow-lg;
+  }
+
+  .btn-outline {
+    @apply inline-flex items-center gap-2 px-6 py-3 border border-gold text-gold font-body text-sm font-medium tracking-wider uppercase rounded-sm
+           hover:bg-gold hover:text-ivory transition-all duration-300;
+  }
+
+  .card-elegant {
+    @apply bg-ivory-light border border-gold/20 rounded-sm shadow-lg p-8 sm:p-10;
+  }
+
+  .arabic-text {
+    @apply font-arabic text-2xl sm:text-3xl md:text-4xl text-burgundy leading-relaxed;
+    direction: rtl;
+  }
+
+  /* Paper texture background */
+  .paper-texture {
+    background-image:
+      radial-gradient(ellipse at 20% 50%, rgba(185, 154, 89, 0.05) 0%, transparent 50%),
+      radial-gradient(ellipse at 80% 50%, rgba(185, 154, 89, 0.05) 0%, transparent 50%),
+      linear-gradient(180deg, rgba(248, 241, 229, 0.9) 0%, rgba(232, 223, 208, 0.4) 100%);
+  }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
