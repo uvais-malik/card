@@ -1,48 +1,30 @@
-import React, { useEffect } from 'react';
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import React from 'react';
 import { CurtainIntro } from './components/CurtainIntro';
-import { OpeningLetter } from './components/OpeningLetter';
-import { FamilySection } from './components/FamilySection';
-import { MainEventReveal } from './components/MainEventReveal';
-import { FamilyDirectory } from './components/FamilyDirectory';
+import { RoyalInvitationDeck } from './components/RoyalInvitationDeck';
 import { FinalFooter } from './components/FinalFooter';
 import { MusicToggle } from './components/MusicToggle';
 import { ScrollProgress } from './components/ScrollProgress';
 import { FloatingFlowers } from './components/FloatingFlowers';
 
-gsap.registerPlugin(ScrollTrigger);
-
 const App: React.FC = () => {
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      ScrollTrigger.refresh();
-    }, 100);
-    return () => clearTimeout(timer);
-  }, []);
-
   return (
-    <div className="relative">
+    <div className="relative w-full min-h-screen bg-[#FAF7F2] text-[#2C1810] selection:bg-gold/30 selection:text-burgundy">
+      {/* Scroll indicator bar */}
       <ScrollProgress />
+
+      {/* Floating flower petals and golden sparkles animation */}
       <FloatingFlowers />
+
+      {/* Audio player toggle */}
       <MusicToggle />
 
-      {/* Scene 1 & 2: Opening Curtains revealing Floating Names */}
+      {/* 1. Grand Royal Curtains with Automatic Sliding Unveil */}
       <CurtainIntro />
 
-      {/* Scene 3: Opening Letter */}
-      <OpeningLetter />
+      {/* 2. Interactive 3-Card Royal Wedding Deck with Slide, Tabs & Swipe */}
+      <RoyalInvitationDeck />
 
-      {/* Scene 4: Bride & Groom + Host + Dua */}
-      <FamilySection />
-
-      {/* Scene 5: Wedding Date & Venue */}
-      <MainEventReveal />
-
-      {/* Scene 6: Family Directory */}
-      <FamilyDirectory />
-
-      {/* Scene 7: Final Thank You */}
+      {/* 3. Refined Ivory & Gold Royal Signature Footer */}
       <FinalFooter />
     </div>
   );

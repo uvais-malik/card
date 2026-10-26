@@ -36,6 +36,8 @@ export default {
       },
       fontFamily: {
         heading: ['Cormorant Garamond', 'Georgia', 'serif'],
+        cinzel: ['Cinzel', 'Trajan Pro', 'serif'],
+        calligraphy: ['Pinyon Script', 'Alex Brush', 'cursive'],
         body: ['Inter', 'system-ui', 'sans-serif'],
         arabic: ['Amiri', 'serif'],
       },

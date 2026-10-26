@@ -271,6 +271,55 @@
 /* Royal revealed backdrop matching the velvet curtains */
 .revealed-royal-bg {
   background:
-    radial-gradient(ellipse at 50% 45%, rgba(185, 154, 89, 0.22) 0%, rgba(101, 31, 43, 0.85) 50%, #2A0C12 100%),
-    linear-gradient(180deg, #3A1018 0%, #4A1520 20%, #651F2B 50%, #4A1520 80%, #2A0C12 100%);
+    radial-gradient(ellipse at 50% 45%, rgba(185, 154, 89, 0.28) 0%, rgba(101, 31, 43, 0.9) 45%, #24080D 100%),
+    linear-gradient(180deg, #2D0911 0%, #4A1520 20%, #651F2B 50%, #4A1520 80%, #1E060B 100%);
+}
+
+@keyframes swayLeft {
+  0%, 100% {
+    transform: rotate(-3deg);
+  }
+  50% {
+    transform: rotate(3deg);
+  }
+}
+
+@keyframes swayRight {
+  0%, 100% {
+    transform: rotate(3deg);
+  }
+  50% {
+    transform: rotate(-3deg);
+  }
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    filter: drop-shadow(0 0 10px rgba(218, 186, 122, 0.5));
+  }
+  50% {
+    filter: drop-shadow(0 0 25px rgba(218, 186, 122, 0.95));
+  }
+}
+
+.animate-sway-left {
+  transform-origin: top center;
+  animation: swayLeft 5s ease-in-out infinite;
+}
+
+.animate-sway-right {
+  transform-origin: top center;
+  animation: swayRight 5.5s ease-in-out infinite 0.5s;
+}
+
+.animate-pulse-glow {
+  animation: pulseGlow 3s ease-in-out infinite;
+}
+
+/* Card slide effects */
+.card-emboss {
+  box-shadow:
+    0 12px 35px -8px rgba(74, 11, 20, 0.18),
+    0 4px 15px rgba(184, 134, 11, 0.12),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.7);
 }
